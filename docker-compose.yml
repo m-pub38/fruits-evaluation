@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  fruits_evaluator:
+    build: .
+    image: fruits_evaluator:latest
+    container_name: fruits_evaluator
+    volumes:
+      - ./data:/app/data
+      - ./:/app/
+    command: ["--in_image", "./data/apple1.jpg"]
